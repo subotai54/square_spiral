@@ -82,7 +82,11 @@ class Square():
                 break
             else:
                 self.x-=1
-    
+    def print(self):
+        for z in self.arr:
+            for x in z:
+                print("{:=2.0f}".format(float(x)), end=" ")
+            print()
     
         
 
@@ -91,8 +95,5 @@ if __name__=="__main__":
     print("Type in the square dimension:", end="")
     dim=input()
     solution=Square(int(dim))
-    arr=list(solution.solve())
-    for z in arr:
-        for x in z:
-            print ("{:=2.0f}".format(float(x)),end=" ")
-        print()
+    solution.solve()
+    solution.print()
